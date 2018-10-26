@@ -1,0 +1,9 @@
+bug
+.sass-cache
+*.sketchplugin
+node_modules/
+package.json.bak
+lerna-debug.log*
+npm-debug.log*
+*.log*
+.DS_Store

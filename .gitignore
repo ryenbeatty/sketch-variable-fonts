@@ -1,0 +1,11 @@
+.vscode/
+bug
+.sass-cache
+dist
+*.sketchplugin
+node_modules/
+coverage/
+reports/
+lib/
+*.log*
+.DS_Store

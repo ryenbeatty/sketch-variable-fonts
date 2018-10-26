@@ -1,0 +1,122 @@
+{
+  "name": "variable-fonts-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "sketch": ">=3.0",
+    "node": ">=8.3"
+  },
+  "private": true,
+  "author": "",
+  "license": "MIT",
+  "skpm": {
+    "name": "Variable Fonts",
+    "manifest": "src/manifest.json",
+    "main": "VariableFonts.sketchplugin"
+  },
+  "files": [
+    "VariableFonts.sketchplugin"
+  ],
+  "main": "VariableFonts.sketchplugin",
+  "scripts": {
+    "build": "BABEL_ENV=production skpm-build && node ./scripts/build.js",
+    "clean": "rm -rf ./lib",
+    "start": "BABEL_ENV=development skpm-build --watch",
+    "prebuild": "yarn run clean",
+    "prestart": "yarn run clean && node ./scripts/start.js && skpm-link",
+    "prepublishOnly": "yarn run build"
+  },
+  "dependencies": {
+    "fs-extra": "^7.0.0",
+    "include-media": "^1.4.9",
+    "lodash": "^4.17.11",
+    "minimist": "^1.2.0",
+    "mocha-js-delegate": "^0.1.1",
+    "react": "^16.3.2",
+    "react-sketchapp": "^2.1.1",
+    "react-test-renderer": "^16.5.0",
+    "react-transition-group": "^2.5.0",
+    "sketch-module-google-analytics": "^0.1.4",
+    "sketch-module-web-view": "^2.0.1",
+    "sketch-polyfill-fetch": "^0.3.7",
+    "variable-fonts-plugin": "1.0.0"
+  },
+  "devDependencies": {
+    "@skpm/builder": "0.5.10",
+    "eslint-config-sketch": "^0.2.4",
+    "mkdirp": "^0.5.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@rg/eslint-config-voyager",
+      "sketch"
+    ],
+    "rules": {
+      "new-cap": "off",
+      "import/extensions": "ignorePackages",
+      "import/no-unresolved": "ignorePackages"
+    },
+    "globals": {
+      "__PRODUCTION__": false,
+      "__DEVELOPMENT__": false,
+      "log": false,
+      "nil": false,
+      "context": false,
+      "NSCachesDirectory": false,
+      "NSUserDomainMask": false,
+      "NSFullSizeContentViewWindowMask": false,
+      "NSTitledWindowMask": false,
+      "NSUTF8StringEncoding": false,
+      "NSAlert": false,
+      "NSString": false,
+      "MSArtboardGroup": false,
+      "NSSound": false,
+      "NSURL": false,
+      "NSFileManager": false,
+      "NSOKButton": false,
+      "NSOpenPanel": false,
+      "MSExportRequest": false,
+      "MSSliceLayer": false,
+      "MOPointer": false,
+      "NSMutableString": false,
+      "NSWorkspace": false,
+      "NSMutableURLRequest": false,
+      "NSJSONSerialization": false,
+      "NSJSONWritingPrettyPrinted": false,
+      "NSData": false,
+      "NSBundle": false,
+      "NSURLConnection": false,
+      "NSTemporaryDirectory": false,
+      "NSUserName": false,
+      "NSFullUserName": false,
+      "NSUserNotification": false,
+      "NSUserNotificationCenter": false,
+      "NSBitmapImageRep": false,
+      "NSMutableDictionary": false,
+      "NSPNGFileType": false,
+      "Mocha": false,
+      "CBIdentity": false,
+      "CBIdentityAuthority": false,
+      "MSTextLayer": false,
+      "NSFont": false,
+      "MSColor": false,
+      "NSMakeRect": false,
+      "MSRect": false,
+      "MSLayerGroup": false,
+      "MSStyle": false,
+      "MSStyleBorder": false,
+      "MSStyleShadow": false,
+      "NSView": false,
+      "NSTextView": false,
+      "COSAlertWindow": false,
+      "NSImage": false,
+      "NSMakeSize": false,
+      "NSColor": false,
+      "MSTextStyle": false,
+      "NSHomeDirectory": false
+    }
+  },
+  "jest": {
+    "testURL": "http://localhost/"
+  }
+}

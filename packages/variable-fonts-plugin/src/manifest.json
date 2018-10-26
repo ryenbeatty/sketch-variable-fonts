@@ -1,0 +1,17 @@
+{
+  "name": "Variable Font",
+  "identifier": "net.variable-font",
+  "compatibleVersion": 46.1,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "Insert Variable Font",
+      "identifier": "variable-font",
+      "script": "./variable-font.js"
+    }
+  ],
+  "menu": {
+    "title": "Variable Font",
+    "items": ["variable-font"]
+  }
+}

@@ -1,0 +1,36 @@
+[ignore]
+.*/node_modules/fbjs/
+.*/node_modules/.*/test/.*$
+.*/node_modules/typechecker
+.*/node_modules/animated
+.*/node_modules/react-native-web
+.*/node_modules/react-sketchapp
+.*/node_modules/nwb
+.*/node_modules/editions
+.*/node_modules/babel-plugin-transform-react-remove-prop-types
+.*/lib
+
+[include]
+
+[libs]
+flow-types/
+
+[options]
+module.file_ext=.js
+module.file_ext=.svg
+module.file_ext=.json
+module.file_ext=.jsx
+module.file_ext=.css
+module.file_ext=.scss
+module.name_mapper='.*\(.scss\)' -> 'SCSSModule'
+module.ignore_non_literal_requires=true
+module.name_mapper='^\(actions\|components\|shared\|resolvers\|behaviours\|static\|selectors\)\/\(.*\)$' -> '<PROJECT_ROOT>/packages/\1/\2'
+
+unsafe.enable_getters_and_setters=true
+esproposal.class_instance_fields=enable
+esproposal.class_static_fields=enable
+suppress_comment=.*\\$FlowIssue.*
+suppress_comment=.*\\$FlowIgnore.*
+
+[version]
+^0.53.1

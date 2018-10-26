@@ -1,0 +1,27 @@
+{
+  "name": "mpv",
+  "private": true,
+  "license": "",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "yarn && yarn lerna run prepublishOnly",
+    "build": "lerna run build",
+    "check": "yarn lint",
+    "clean": "lerna clean --yes && lerna run --parallel clean && rm -rf ./node_modules",
+    "lint": "lerna run --parallel lint",
+    "start": "lerna run --parallel start",
+    "precommit": "lerna run precommit --concurrency 1",
+    "prerelease": "yarn bootstrap && yarn run check && lerna publish --conventional-commits --skip-npm --skip-git --yes && git checkout -- packages/* && yarn build",
+    "release": "lerna run release --concurrency 1",
+    "update": "yarn upgrade-interactive --latest",
+    "test": "lerna run --parallel test"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "devDependencies": {
+    "lerna": "^3.4.1"
+  }
+}
